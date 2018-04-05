@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 3 partie 3 JQUERY</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="guessinggame" />
+    <button type="button" id="tryout">Réponse</button>
+    <h2>Essais:</h2>
+    <p id="countattempts"></p>
+    <script>
+    var randomnumber = Math.floor(Math.random()*101);
+    var countattempts = 0;
+    console.log(randomnumber);
+    $('#tryout').click(function() {
+      var attempt = $('#guessinggame').val();
+      console.log(attempt);
+      attempt = parseInt(attempt);
+      countattempts++;
+      console.log(countattempts);
+      $('p').text(countattempts);
+      if (attempt == randomnumber) {
+        alert('Correct');
+      }
+      else if (attempt <= randomnumber) {
+        alert('C\'est plus !');
+      }
+      else if (attempt >= randomnumber) {
+        alert('C\'est moins !');
+      }
+    })
+    </script>
+  </body>
+</html>
